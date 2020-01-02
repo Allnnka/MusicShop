@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: head">
+    <title id="pageTitle">Login</title>
+
+    <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="webjars/font-awesome/5.12.0/css/all.css" />
+</head>
+<body>
+<header>
+    <th:block th:insert="fragments/header :: menu-top"></th:block>
+</header>
+<div class="sign-in">
+    <div class="container-login">
+        <div class="wrap-login">
+            <div class="login-pic js-tilt">
+                <img src="images/music-instrument.jpg" alt="IMG">
+            </div>
+            <form class="login-form validate-form" th:action="@{/login}" method="post">
+                <span class="login-form-title">
+                LOG IN
+                </span>
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input" type="text" name="username" placeholder="Username">
+                    <span class="focus-input"></span>
+                    <span class="symbol-input">
+                <i class="fas fa-user" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="wrap-input validate-input" data-validate="Password is required">
+                    <input class="input" type="password" name="password" placeholder="Password">
+                    <span class="focus-input"></span>
+                    <span class="symbol-input">
+                         <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                    </div>
+                    <div class="container-login-form-btn" value="Sign In">
+                        <button class="login-form-btn" type="submit" name="login">
+                            LOG IN
+                        </button>
+                    </div>
+                    <div class="text-center p-t-12">
+                    <span class="txt1">
+                    Forgot
+                    </span>
+                        <a class="txt2" href="#">
+                        Username / Password?
+                    </a>
+                </div>
+                <div class="text-center p-t-136">
+                    <a class="txt2" th:href="@{/registration}">
+                        Create your Account
+                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<th:block th:insert="fragments/header :: scriptSection"></th:block>
+</body>
+</html>

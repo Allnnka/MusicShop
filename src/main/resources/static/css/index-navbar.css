@@ -245,6 +245,33 @@ body {
     font-weight: 600;
 }
 
-a{
+.nav-log-in a:hover{
     text-decoration: none;
+}
+
+
+/*Top navbar*/
+.navbar{
+    background: #6B211B;
+    color: whitesmoke!important;
+    opacity: 0.9;
+}
+.nav-link {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: whitesmoke!important;
+}
+
+.nav-log-in a:hover{
+    text-decoration: none;
+}
+.navbar-brand{
+    color: whitesmoke;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+    color: whitesmoke;
 }
