@@ -16,15 +16,16 @@
             <div class="login-pic js-tilt">
                 <img src="images/music-instrument.jpg" alt="IMG">
             </div>
-            <form class="login-form validate-form" th:action="@{/login}" method="post">
+            <!--/*@thymesVar id="user" type="com.allnnka.firstspringproject.model.User"*/-->
+            <form class="login-form validate-form" th:action="@{/login}" method="post" th:object="${user}">
                 <span class="login-form-title">
                 LOG IN
                 </span>
-                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input" type="text" name="username" placeholder="Username">
+                <div class="wrap-input validate-input">
+                    <input class="input" type="text" name="username" placeholder="Username" required>
                     <span class="focus-input"></span>
                     <span class="symbol-input">
-                <i class="fas fa-user" aria-hidden="true"></i>
+                        <i class="fas fa-user" aria-hidden="true"></i>
                     </span>
                 </div>
                 <div class="wrap-input validate-input" data-validate="Password is required">
@@ -33,13 +34,16 @@
                     <span class="symbol-input">
                          <i class="fa fa-lock" aria-hidden="true"></i>
                     </span>
-                    </div>
-                    <div class="container-login-form-btn" value="Sign In">
+                </div>
+                <div class="alert alert-danger" th:if="${param.error}">
+                        Invalid username or password
+                </div>
+                <div class="container-login-form-btn" value="Sign In">
                         <button class="login-form-btn" type="submit" name="login">
                             LOG IN
                         </button>
-                    </div>
-                    <div class="text-center p-t-12">
+                </div>
+                <div class="text-center p-t-12">
                     <span class="txt1">
                     Forgot
                     </span>
@@ -56,7 +60,6 @@
             </form>
         </div>
     </div>
-
 </div>
 <th:block th:insert="fragments/header :: scriptSection"></th:block>
 </body>

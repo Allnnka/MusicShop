@@ -1,22 +1,12 @@
 package com.allnnka.firstspringproject.service;
 
 
-import com.allnnka.firstspringproject.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import com.allnnka.firstspringproject.model.User;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService implements UserDetailsService {
-    @Autowired
-    private UserRepository userRepo;
+public interface UserService{
+    void save(User user);
 
-
-    @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return userRepo.findByUsername(s);
-    }
-
+    User findByUsername(String username);
 }
