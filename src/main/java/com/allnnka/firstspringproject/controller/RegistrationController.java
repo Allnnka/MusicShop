@@ -40,9 +40,9 @@ public class RegistrationController {
             return "registration";
         }
         userService.save(user);
-        securityService.autoLogin(user.getUsername(), user.getPasswordConfirm());
+        securityService.autoLogin(user.getUsername(), user.getPassword());
 
-        return "redirect:/hello";
+        return "redirect:/";
     }
 
     @GetMapping("/login")

@@ -238,8 +238,8 @@ body {
 
 /*Other navbar*/
 .nav-link {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 0!important;
+    padding-left: 0!important;
     color: darkred !important;
     font-size: 20px;
     font-weight: 600;
@@ -274,4 +274,9 @@ body {
 .navbar-brand:hover {
     text-decoration: none;
     color: whitesmoke;
+}
+.nav-log-in a{
+    padding: 0!important;
+    margin-left: 10px;
+    margin-right: 10px;
 }

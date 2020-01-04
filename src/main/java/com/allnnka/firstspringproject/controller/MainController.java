@@ -9,14 +9,7 @@ import java.util.Map;
 @Controller
 public class MainController {
     @GetMapping("/")
-    public String index( Map<String, Object> model) {
+    public String index() {
         return "index";
     }
-    @GetMapping("/hello")
-    public String hello( Map<String, Object> model) {
-        return "hello";
-    }
-
-
-
 }
