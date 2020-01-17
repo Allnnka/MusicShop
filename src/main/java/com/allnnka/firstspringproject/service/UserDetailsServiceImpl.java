@@ -2,6 +2,7 @@ package com.allnnka.firstspringproject.service;
 
 import com.allnnka.firstspringproject.model.Role;
 import com.allnnka.firstspringproject.model.User;
+import com.allnnka.firstspringproject.repository.RoleRepository;
 import com.allnnka.firstspringproject.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,6 +19,7 @@ import java.util.Set;
 public class UserDetailsServiceImpl  implements UserDetailsService{
 
     private UserRepository userRepository;
+    private RoleRepository roleRepository;
 
     public UserDetailsServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -26,12 +28,13 @@ public class UserDetailsServiceImpl  implements UserDetailsService{
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
         User user = userRepository.findByUsername(username);
         if (user == null) throw new UsernameNotFoundException(username);
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         for (Role role : user.getRoles()){
-            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+            grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         }
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);

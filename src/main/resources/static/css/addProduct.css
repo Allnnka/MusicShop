@@ -1,0 +1,60 @@
+
+.addProduct-form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    line-height: 1.2;
+    transition: all .4s;
+    background-color: #1B6B3E;
+    color: #fff;
+}
+
+button {
+    outline: none !important;
+    border: none;
+    background: 0 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.container-addProduct-form-btn {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+textarea.input {
+    min-height: 110px;
+    padding-top: 9px;
+    padding-bottom: 13px;
+    border: 1px solid #6B211B !important;
+    padding-left: 10px;
+}
+
+textarea {
+    outline: none;
+    border: none;
+}
+.col-sm-12 input:focus {
+    border: 1px solid #6B211B !important;
+    box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+}
+
+.contact-form-title {
+    width: 100%;
+    display: block;
+    font-family: Raleway-Black;
+    font-size: 35px;
+    color: #1B6B3E;
+    line-height: 1.2;
+    text-align: center;
+}
