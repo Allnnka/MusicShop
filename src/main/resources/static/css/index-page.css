@@ -1,0 +1,11 @@
+.index-page-products{
+    width: 80%;
+    margin-left: 270px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.card-products{
+    width: 18rem;
+}

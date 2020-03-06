@@ -4,6 +4,8 @@ import com.allnnka.firstspringproject.model.Product;
 import com.allnnka.firstspringproject.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -17,4 +19,11 @@ public class ProductServiceImpl implements ProductService {
     public void save(Product product) {
         productRepository.save(product);
     }
+
+    @Override
+    public List<Product> findAll() {
+       return  productRepository.findAll();
+    }
+
+
 }

@@ -6,5 +6,17 @@
 <body>
 <th:block th:insert="fragments/header :: header"></th:block>
 <th:block th:insert="fragments/header :: scriptSection"></th:block>
+<article class="index-page-products">
+
+    <div class="card card-products mx-2" th:each="product: ${products}">
+        <img class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+            <h5 th:text="${product.productName}" class="card-title"></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</article>
+
 </body>
 </html>
