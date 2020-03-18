@@ -9,7 +9,7 @@
 <article class="index-page-products">
 
     <div class="card card-products mx-2" th:each="product: ${products}">
-        <img class="card-img-top" th:src="${'/uploads/'+product.fileName}">
+        <img class="card-img-top" th:src="${'../uploads/'+product.fileName}">
         <div class="card-body">
             <h5 th:text="${product.productName}" class="card-title"></h5>
             <p class="card-text" th:text="${'Price: '+product.price}"></p>

@@ -25,7 +25,7 @@ public class ProductController {
 
     @Autowired
     ProductService productService;
-    public static String uploadDirectory= System.getProperty("user.dir")+"/src/main/resources/uploads";
+    public static String uploadDirectory= System.getProperty("user.dir")+"/src/main/resources/static/uploads";
 
     @GetMapping("/addProduct")
     public String getProduct(Product product) {
