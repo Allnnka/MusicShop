@@ -9,10 +9,11 @@
 <article class="index-page-products">
 
     <div class="card card-products mx-2" th:each="product: ${products}">
-        <img class="card-img-top" alt="Card image cap">
+        <img class="card-img-top" th:src="${'/uploads/'+product.fileName}">
         <div class="card-body">
             <h5 th:text="${product.productName}" class="card-title"></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text" th:text="${'Price: '+product.price}"></p>
+            <p class="card-text" th:text="${product.description}"></p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>

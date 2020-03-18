@@ -3,7 +3,14 @@ package com.allnnka.firstspringproject.service;
 import com.allnnka.firstspringproject.model.Product;
 import com.allnnka.firstspringproject.repository.ProductRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Service
@@ -16,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void save(Product product) {
+    public void save(Product product)  {
         productRepository.save(product);
     }
 

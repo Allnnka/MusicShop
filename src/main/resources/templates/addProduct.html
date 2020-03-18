@@ -9,7 +9,7 @@
     <div class="container-login">
         <div class="wrap-login">
             <!--/*@thymesVar id="product" type="com.allnnka.firstspringproject.model.Product"*/-->
-            <form th:object="${product}" th:action="@{/addProduct}" method="post" class="col-lg-12 my-3" autocomplete="off">
+            <form th:object="${product}" th:action="@{/addProduct}" method="post" class="col-lg-12 my-3" autocomplete="off" enctype="multipart/form-data">
                 <div class="form-group row">
                     <div class="col-sm-12">
                         <input th:field="*{productName}" name="productName" type="text" class="form-control" placeholder="Name">
@@ -45,6 +45,11 @@
                     <textarea th:field="*{description}" class="input" placeholder="Description..."></textarea>
                     <span class="focus-input"></span>
                 </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                       <input type="file"  name="imageFile" multiple>
+                    </div>
+                </div>
                 <div class="container-addProduct-form-btn">
                     <button class="addProduct-form-btn">
                             <span>
@@ -52,6 +57,7 @@
                             </span>
                     </button>
                 </div>
+
             </form>
         </div>
     </div>

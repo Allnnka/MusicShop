@@ -1,10 +1,10 @@
 package com.allnnka.firstspringproject.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 public class Product {
@@ -18,6 +18,11 @@ public class Product {
     private String TypeOfInstrument;
     private double price;
     private String description;
+    private String fileName;
+    private String filePath;
+    private String fileType;
+    private String fileSize;
+    private Timestamp createdDate;
 
     public Long getId() {
         return id;
@@ -73,5 +78,45 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public String getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
+    }
+
+    public String getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(String fileSize) {
+        this.fileSize = fileSize;
+    }
+
+    public Timestamp getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 }
