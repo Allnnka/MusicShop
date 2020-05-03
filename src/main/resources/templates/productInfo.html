@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="/fragments/header :: head">
+    <title id="pageTitle">Main</title>
+</head>
+<body>
+<div th:insert="/fragments/header :: header">
+</div>
+
+
+<article class="index-page-products">
+    <div class="card card-products mx-2" th:each="productOne:${product}">
+        <img class="card-img-top" th:src="${'../uploads/'+productOne.fileName}">
+        <div class="card-body">
+            <h5 th:text="${productOne.productName}" class="card-title"></h5>
+            <p class="card-text" th:text="${'Price: '+productOne.price}"></p>
+            <p class="card-text" th:text="${productOne.description}"></p>
+        </div>
+    </div>
+</article>
+<th:block th:insert="/fragments/header :: scriptSection"></th:block>
+
+</body>
+</html>

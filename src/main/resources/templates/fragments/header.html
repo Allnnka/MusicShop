@@ -6,8 +6,8 @@
     <title>Title</title>
     <link href="../css/index-navbar.css" rel="stylesheet"/>
     <link href="../css/RegistrationAndLoginForm.css" rel="stylesheet"/>
-    <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="webjars/font-awesome/5.12.0/css/all.css" />
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/webjars/font-awesome/5.12.0/css/all.css" />
     <link rel="stylesheet" href="../css/addProduct.css"/>
     <link rel="stylesheet" href="../css/index-page.css"/>
 </head>
@@ -68,9 +68,9 @@
         </nav>
     </header>
 <div th:fragment="scriptSection">
-    <script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/index-navbar.js"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/jquery/1.9.1/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/index-navbar.js}"></script>
 </div>
 </body>
 </html>

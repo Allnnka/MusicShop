@@ -10,20 +10,23 @@
         <div class="wrap-login">
             <!--/*@thymesVar id="product" type="com.allnnka.firstspringproject.model.Product"*/-->
             <form th:object="${product}" th:action="@{/addProduct}" method="post" class="col-lg-12 my-3" autocomplete="off" enctype="multipart/form-data">
-                <div class="form-group row">
-                    <div class="col-sm-12">
-                        <input th:field="*{productName}" name="productName" type="text" class="form-control" placeholder="Name">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> Name</span>
                     </div>
+                    <input th:field="*{productName}" name="productName" type="text" class="form-control" placeholder="Name">
                 </div>
-                <div class="form-group row">
-                    <div class="col-sm-12">
-                        <input th:field="*{producer}" class="form-control" placeholder="Producer">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> Producer</span>
                     </div>
+                    <input th:field="*{producer}" class="form-control" placeholder="Producer">
                 </div>
-                <div class="form-group row">
-                    <div class="col-sm-12">
-                        <input th:field="*{amount}" class="form-control" type="number" placeholder="Amount">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> Amount</span>
                     </div>
+                    <input th:field="*{amount}" class="form-control" type="number" placeholder="Amount">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -36,19 +39,21 @@
                         <option value="3">some 3</option>
                     </select>
                 </div>
-                <div class="form-group row">
-                    <div class="col-sm-12">
-                        <input th:field="*{price}" class="form-control" type="number" placeholder="Price">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Price</span>
                     </div>
+                    <input th:field="*{price}" class="form-control" type="number" placeholder="Price">
                 </div>
                 <div class="wrap-input mb-3">
                     <textarea th:field="*{description}" class="input" placeholder="Description..."></textarea>
                     <span class="focus-input"></span>
                 </div>
-                <div class="form-group row">
-                    <div class="col-sm-12">
-                       <input type="file"  name="imageFile" multiple>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" > Choose photo</span>
                     </div>
+                    <input type="file" class="form-control" id="inputFile"  name="imageFile" multiple>
                 </div>
                 <div class="container-addProduct-form-btn">
                     <button class="addProduct-form-btn">

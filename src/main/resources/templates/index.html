@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/header :: head">
-    <title id="pageTitle">Main</title>
+    <title id="Index">Main</title>
 </head>
 <body>
 <th:block th:insert="fragments/header :: header"></th:block>
 <th:block th:insert="fragments/header :: scriptSection"></th:block>
 <article class="index-page-products">
-
     <div class="card card-products mx-2" th:each="product: ${products}">
         <img class="card-img-top" th:src="${'../uploads/'+product.fileName}">
         <div class="card-body">
             <h5 th:text="${product.productName}" class="card-title"></h5>
             <p class="card-text" th:text="${'Price: '+product.price}"></p>
             <p class="card-text" th:text="${product.description}"></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <form th:action="@{/productInfo/{id}(id=${product.id})}" method="get">
+                <button class="btn btn-primary">View More</button>
+            </form>
+
         </div>
     </div>
 </article>
-
 </body>
 </html>
