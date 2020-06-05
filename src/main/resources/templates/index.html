@@ -8,7 +8,9 @@
 <th:block th:insert="fragments/header :: scriptSection"></th:block>
 <article class="index-page-products">
     <div class="card card-products mx-2" th:each="product: ${products}">
-        <img class="card-img-top" th:src="${'../uploads/'+product.fileName}">
+        <a class="img-div-index">
+            <img class="card-img-top" th:src="${'../uploads/'+product.fileName}">
+        </a>
         <div class="card-body">
             <h5 th:text="${product.productName}" class="card-title"></h5>
             <p class="card-text" th:text="${'Price: '+product.price}"></p>
@@ -16,7 +18,6 @@
             <form th:action="@{/productInfo/{id}(id=${product.id})}" method="get">
                 <button class="btn btn-primary">View More</button>
             </form>
-
         </div>
     </div>
 </article>

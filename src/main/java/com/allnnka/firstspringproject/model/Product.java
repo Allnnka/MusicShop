@@ -15,8 +15,9 @@ public class Product {
     private String productName;
     private String producer;
     private int amount;
-    private String TypeOfInstrument;
+    private TypeOfProduct TypeOfInstrument;
     private double price;
+    @Lob
     private String description;
     private String fileName;
     private String filePath;
@@ -56,11 +57,11 @@ public class Product {
         this.amount = amount;
     }
 
-    public String getTypeOfInstrument() {
+    public TypeOfProduct getTypeOfInstrument() {
         return TypeOfInstrument;
     }
 
-    public void setTypeOfInstrument(String typeOfInstrument) {
+    public void setTypeOfInstrument(TypeOfProduct typeOfInstrument) {
         TypeOfInstrument = typeOfInstrument;
     }
 

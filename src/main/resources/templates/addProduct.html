@@ -32,11 +32,9 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect">Type of instrument</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect">
-                        <option value="jakisTemperament">some </option>
-                        <option value="1">some 1</option>
-                        <option value="2">some 2</option>
-                        <option value="3">some 3</option>
+                    <select class="custom-select" id="inputGroupSelect" name="typeOfInstrument">
+                        <option th:each="typeOfprod:${T(com.allnnka.firstspringproject.model.TypeOfProduct).values()}" th:value="${typeOfprod}"
+                        th:text="${typeOfprod}"></option>
                     </select>
                 </div>
                 <div class="input-group mb-3">

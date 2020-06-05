@@ -22,6 +22,4 @@ public class MainController {
         model.addAttribute("products",productList);
         return "index";
     }
-
-
 }

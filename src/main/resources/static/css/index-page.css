@@ -11,5 +11,15 @@
 }
 
 .card-img-top{
-    height: 200px;
+    width:auto;
+    max-height: 100%;
+    display:block;
+    margin:auto;
+}
+.img-div-index{
+    display: table-cell;
+    height: 300px;
+    width: 300px;
+    vertical-align: middle;
+    padding: 0px 20px;
 }
