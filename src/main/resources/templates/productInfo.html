@@ -7,17 +7,30 @@
 <div th:insert="/fragments/header :: header">
 </div>
 
-
-<article class="index-page-products">
-    <div class="card card-products mx-2" th:each="productOne:${product}">
-        <img class="card-img-top" th:src="${'../uploads/'+productOne.fileName}">
-        <div class="card-body">
-            <h5 th:text="${productOne.productName}" class="card-title"></h5>
-            <p class="card-text" th:text="${'Price: '+productOne.price}"></p>
-            <p class="card-text" th:text="${productOne.description}"></p>
-        </div>
+<div class="sign-in">
+    <div class="music-shop-bg">
+        <article class="index-page-products">
+            <div class="col-10 align-content-center row product-info-div" th:each="productOne:${product}">
+                <div class="col-6">
+                    <img class="card-img-top-info" th:src="${'../uploads/'+productOne.fileName}">
+                </div>
+                <div class="col-4 description-product">
+                    <h3 th:text="${productOne.productName}" class="title-info mb-4"></h3>
+                    <h5>Price:
+                        <i class="fas fa-euro-sign"></i>
+                        <span th:text="${productOne.price}"></span>
+                    </h5>
+                    <h3 class="mt-4 title-info">Description</h3>
+                    <p class="card-text" th:text="${productOne.description}"></p>
+                    <form>
+                        <button class="btn add-cart-info-btn my-3">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </article>
     </div>
-</article>
+</div>
+<th:block th:insert="fragments/footer :: footer"></th:block>
 <th:block th:insert="/fragments/header :: scriptSection"></th:block>
 
 </body>

@@ -1,23 +1,6 @@
 
-html {
-    box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-    padding: 0;
-    margin: 0;
-}
-
 
 /* navigation styling*/
-
-.header {
-    width: 100vw;
-    background-size: cover;
-}
-
 .navigation {
     width: 70px;
     height: 100%;
@@ -255,4 +238,11 @@ html {
     padding: 0!important;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.page-footer{
+    background-color: #6B211B;
+    opacity: 90%;
+    color: whitesmoke;
+    height: 40px;
 }

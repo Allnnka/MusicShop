@@ -6,20 +6,32 @@
 <body>
 <th:block th:insert="fragments/header :: header"></th:block>
 <th:block th:insert="fragments/header :: scriptSection"></th:block>
-<article class="index-page-products">
-    <div class="card card-products mx-2" th:each="product: ${products}">
-        <a class="img-div-index">
-            <img class="card-img-top" th:src="${'../uploads/'+product.fileName}">
-        </a>
-        <div class="card-body">
-            <h5 th:text="${product.productName}" class="card-title"></h5>
-            <p class="card-text" th:text="${'Price: '+product.price}"></p>
-            <p class="card-text" th:text="${product.description}"></p>
-            <form th:action="@{/productInfo/{id}(id=${product.id})}" method="get">
-                <button class="btn btn-primary">View More</button>
-            </form>
-        </div>
+<div class="sign-in">
+    <div class="music-shop-bg">
+        <article class="index-page-products">
+            <div class="card card-products mx-2" th:each="product: ${products}">
+                <a class="img-div-index">
+                    <img class="card-img-top" th:src="${'../uploads/'+product.fileName}">
+                </a>
+                <div class="card-body">
+                    <h5 th:text="${product.productName}" class="card-title"></h5>
+                    <p class="card-text" th:text="${'Price: '+product.price}"></p>
+                    <div class="row ">
+                        <form th:action="@{/productInfo/{id}(id=${product.id})}" method="get">
+                            <button class="btn view-more-btn">View More</button>
+                        </form>
+                        <form>
+                            <button class="btn view-more-btn">Add to Cart</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </article>
     </div>
-</article>
+</div>
+
+<th:block th:insert="fragments/footer :: footer"></th:block>
+
 </body>
 </html>
